@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Project;
+use Facades\Tests\Setup\ProjectFactory;
 
 class ManageProjectsTest extends TestCase
 {
@@ -14,8 +15,6 @@ class ManageProjectsTest extends TestCase
 	/** @test */
 	public function a_user_can_create_a_project()
 	{
-		$this->withoutExceptionHandling();
-
 		$this->signIn();
 
 		$this->get('/projects/create')->assertStatus(200);
@@ -32,8 +31,6 @@ class ManageProjectsTest extends TestCase
 
 		$responce->assertRedirect($project->path());
 
-		$this->assertDatabaseHas('projects', $attributes);
-
 		$this->get('/projects')->assertSee($attributes['title']);
 
 		$this->get($project->path())
@@ -45,24 +42,20 @@ class ManageProjectsTest extends TestCase
 	/** @test */
 	public function a_user_can_update_a_project()
 	{
-		$this->withoutExceptionHandling();
-		$this->signIn();
-		$project = factory('App\Project')->create(['owner_id' => auth()->id()]);
-		$this->patch($project->path(), [
-			'notes' => 'Changed'
-		])
+		$project = ProjectFactory::create();
+		$this->actingAs($project->owner)
+			->patch($project->path(), $attributes = ['notes' => 'Changed'])
 			->assertRedirect($project->path())
 			->assertSee($project->notes);
-		$this->assertDatabaseHas('projects', ['notes' => 'Changed']);
+		$this->assertDatabaseHas('projects', $attributes);
 	}
 
 	/** @test */
 	public function a_user_can_view_a_their_project()
 	{
-		$this->withoutExceptionHandling();
-		$this->signIn();
-		$project = factory('App\Project')->create(['owner_id' => auth()->id()]);
-		$this->get($project->path())
+		$project = ProjectFactory::create();
+		$this->actingAs($project->owner)
+			->get($project->path())
 			->assertSee($project->title)
 			->assertSee($project->description);
 	}
