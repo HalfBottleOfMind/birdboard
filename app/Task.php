@@ -14,30 +14,23 @@ class Task extends Model
 	protected $casts = [
 		'completed' => 'boolean'
 	];
-	
-	protected static function boot() 
-	{
-		parent::boot();
-
-		// static::created(function($task) {
-		// 	$task->project->recordActivity('created_task');
-		// });
-
-		// static::deleted(function($task) {
-		// 	$task->project->recordActivity('deleted_task');
-		// });
-	}
 
 	public function complete()
 	{
 		$this->update(['completed' => true]);
-		$this->project->recordActivity('completed_task');
+		$this->activity()->create([
+			'project_id' => $this->project_id,
+			'description' => 'completed_task'
+		]);
 	}
 
 	public function incomplete()
 	{
 		$this->update(['completed' => false]);
-		$this->project->recordActivity('incomplete_task');
+		$this->activity()->create([
+			'project_id' => $this->project_id,
+			'description' => 'incomplete_task'
+		]);
 	}
 
     public function project()
@@ -49,4 +42,17 @@ class Task extends Model
     {
         return $this->project->path() . '/tasks/' . $this->id;
     }
+
+	public function activity()
+	{
+		return $this->morphMany(Activity::class, 'subject')->latest();
+	}
+
+	public function recordActivity($description)
+	{
+		$this->activity()->create([
+			'project_id' => $this->project_id,
+			'description' => $description,
+		]);
+	}
 }

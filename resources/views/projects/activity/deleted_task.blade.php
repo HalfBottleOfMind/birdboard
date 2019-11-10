@@ -1,1 +1,1 @@
-You delete a task
+You delete "{{ $activity->subject->body }}"
