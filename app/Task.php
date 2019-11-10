@@ -23,6 +23,7 @@ class Task extends Model
 	{
 		$this->update(['completed' => true]);
 		$this->activity()->create([
+			'user_id' => auth()->check() ? auth()->id() : $this->project->owner->id,
 			'project_id' => $this->project_id,
 			'description' => 'completed_task'
 		]);
@@ -32,6 +33,7 @@ class Task extends Model
 	{
 		$this->update(['completed' => false]);
 		$this->activity()->create([
+			'user_id' => auth()->check() ? auth()->id() : $this->project->owner->id,
 			'project_id' => $this->project_id,
 			'description' => 'incomplete_task'
 		]);

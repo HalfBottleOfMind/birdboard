@@ -1,1 +1,1 @@
-You delete "{{ $activity->subject->body }}"
+{{ $activity->user->name }} delete "{{ $activity->subject->body }}"
