@@ -20,14 +20,20 @@ class Task extends Model
 		parent::boot();
 
 		static::created(function($task) {
-			$task->project->recordActivity($task->project, 'created_task');
+			$task->project->recordActivity('created_task');
 		});
 	}
 
 	public function complete()
 	{
 		$this->update(['completed' => true]);
-		$this->project->recordActivity($this->project, 'completed_task');
+		$this->project->recordActivity('completed_task');
+	}
+
+	public function incomplete()
+	{
+		$this->update(['completed' => false]);
+		$this->project->recordActivity('incomplete_task');
 	}
 
     public function project()
