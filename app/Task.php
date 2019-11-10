@@ -7,6 +7,10 @@ use App\Project;
 
 class Task extends Model
 {
+	use RecordsActivity;
+
+	protected static $recordableEvents = ['created', 'deleted'];
+
     protected $guarded = [];
 
 	protected $touches = ['project'];
@@ -42,17 +46,4 @@ class Task extends Model
     {
         return $this->project->path() . '/tasks/' . $this->id;
     }
-
-	public function activity()
-	{
-		return $this->morphMany(Activity::class, 'subject')->latest();
-	}
-
-	public function recordActivity($description)
-	{
-		$this->activity()->create([
-			'project_id' => $this->project_id,
-			'description' => $description,
-		]);
-	}
 }
