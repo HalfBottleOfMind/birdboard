@@ -52,20 +52,15 @@
 						<textarea name="notes" class="card w-full" style="min-height: 200px mb-4" placeholder="Notes?">{{ $project->notes }}</textarea>
 						<button type="submit" class="button">Save</button>
 					</form>
-					@if ($errors->any())
-						<div class="field mt-6">
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li class="text-red-500">{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+					@include('errors')
 				</div>
 			</div>
 			<div class="lg:w-1/4 px-3">
 				@include('projects.card')
 				@include('projects.activity.card')
+				@can('inviteUsers', $project)
+					@include('projects.invite')
+				@endcan
 			</div>
 		</div>
 	</main>
