@@ -40,6 +40,25 @@ class ManageProjectsTest extends TestCase
 	}
 
 	/** @test */
+	public function a_user_can_delete_a_project()
+	{
+		$project = ProjectFactory::create();
+		$this->actingAs($project->owner)
+			->delete($project->path())
+			->assertRedirect('/projects');
+		$this->assertDatabaseMissing('projects', $project->only('id'));
+	}
+
+	/** @test */
+	public function guests_cannot_delete_a_project()
+	{
+		$project = ProjectFactory::create();
+		$this->delete($project->path())
+			->assertRedirect('/login');
+		$this->assertDatabaseHas('projects', $project->only('id'));
+	}
+
+	/** @test */
 	public function a_user_can_update_a_project()
 	{
 		$this->withoutExceptionHandling();
@@ -109,9 +128,16 @@ class ManageProjectsTest extends TestCase
 	/** @test */
 	public function an_authenticated_users_cannot_update_projects_of_others()
 	{
-		$this->withExceptionHandling();
 		$this->signIn();
 		$project = factory('App\Project')->create();
 		$this->patch($project->path(), [])->assertStatus(403);
+	}
+
+	/** @test */
+	public function an_authenticated_users_cannot_delete_projects_of_others()
+	{
+		$this->signIn();
+		$project = factory('App\Project')->create();
+		$this->delete($project->path(), [])->assertStatus(403);
 	}
 }

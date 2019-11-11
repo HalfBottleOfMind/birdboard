@@ -15,8 +15,6 @@ class TriggerActivityTest extends TestCase
 	/** @test */
 	public function creating_a_project()
 	{
-		$this->withoutExceptionHandling();
-
 		$project = ProjectFactory::create();
 
 		$this->assertCount(1, $project->activity);
