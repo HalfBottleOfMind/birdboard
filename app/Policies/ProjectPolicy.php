@@ -20,7 +20,7 @@ class ProjectPolicy
         return $user->is($project->owner) || $project->members->contains($user);
     }
 
-    public function destroy(User $user, Project $project)
+    public function delete(User $user, Project $project)
     {
         return $user->is($project->owner);
     }
