@@ -17,3 +17,21 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+.theme-light {
+	--page-background-color: #F5F6F9;
+	--card-background-color: white;
+	--button-background-color: #47CDFF;
+	--nav-background-color: white;
+
+	--text-default-color: #222;
+}
+
+.theme-dark {
+	--page-background-color: #17181e;
+	--card-background-color: #1f2027;
+	--button-background-color: #56b6f9;
+	--nav-background-color: #1f2027;
+
+	--text-default-color: white;
+}

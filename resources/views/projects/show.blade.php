@@ -3,7 +3,7 @@
 @section('content')
 	<header class="flex items-center mb-3 py-4">
 		<div class="flex justify-between items-end w-full">
-			<p class="text-gray-600 text-sm">
+			<p class="text-default text-sm">
 				<a href="/projects">My Projects</a> / {{ $project->title }}
 			</p>
 			<div class="flex items-center">
@@ -21,7 +21,7 @@
 		<div class="lg:flex -mx-3">
 			<div class="lg:w-3/4 px-3 mb-6">
 				<div class="mb-6">
-					<div><h2 class="text-gray-600 text-lg mb-3">Tasks</h2></div>
+					<div><h2 class="text-default text-lg mb-3">Tasks</h2></div>
 					
 					@foreach ($project->tasks as $task)
 						<div class="card mb-3">
@@ -29,8 +29,8 @@
 								@method('PATCH')
 								@csrf
 								<div class="flex items-center">
-									<input name="body" value="{{ $task->body }}" class="w-full {{ $task->completed ? 'text-gray-600' : '' }}">
-									<input type="checkbox" name="completed" class="w-4 h-4" onchange="this.form.submit()" {{ $task->completed ? 'checked' : '' }}>
+									<input name="body" value="{{ $task->body }}" class="w-full {{ $task->completed ? 'text-default' : '' }} bg-card">
+									<input type="checkbox" name="completed" class="w-4 h-4 bg-card" onchange="this.form.submit()" {{ $task->completed ? 'checked' : '' }}>
 								</div>
 							</form>
 						</div>
@@ -39,12 +39,12 @@
 					<div class="mb-3 card">
 						<form action="{{ $project->path() . '/tasks' }}" method="POST">
 							@csrf
-							<input placeholder="Add the new task..." name="body" class="w-full">
+							<input placeholder="Add the new task..." name="body" class="w-full bg-card">
 						</form>
 					</div>
 				</div>
 				<div>
-					<div><h2 class="text-gray-600 text-lg mb-3">General Notes</h2></div>
+					<div><h2 class="text-default text-lg mb-3">General Notes</h2></div>
 
 					<form method="POST" action="{{ $project->path() }}">
 						@method('PATCH')
