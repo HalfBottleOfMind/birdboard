@@ -24,4 +24,9 @@ class ProjectPolicy
     {
         return $user->is($project->owner);
     }
+
+    public function inviteUsers(User $user, Project $project)
+    {
+        return $user->is($project->owner);
+    }
 }
