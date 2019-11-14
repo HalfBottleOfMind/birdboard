@@ -68913,8 +68913,8 @@ if (document.getElementById('example')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\andro\Documents\birdboard\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\andro\Documents\birdboard\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\panfilovvv\Dropbox\birdboard\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\panfilovvv\Dropbox\birdboard\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

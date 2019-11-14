@@ -2,7 +2,7 @@
 <div class="field mb-6">
 	<label for="title" class="label text-sm mb-2 block">Title</label>
 	<div class="control">
-		<input type="text" name="title" placeholder="Title" class="input bg-transparent border border-gray-300 rounded p-2 text-xs w-full" value="{{ $project->title }}" required>
+		<input type="text" name="title" placeholder="Title" class="input bg-transparent border border-muted rounded p-2 text-xs w-full" value="{{ $project->title }}" required>
 	</div>
 </div>
 <div class="field mb-6">
@@ -12,7 +12,7 @@
 			placeholder="Description" 
 			name="description" 
 			rows="10" 
-			class="textarea bg-transparent border border-gray-300 rounded p-2 text-xs w-full" 
+			class="textarea bg-transparent border border-muted rounded p-2 text-xs w-full" 
 			required
 			>{{ $project->description }}</textarea>
 	</div>
@@ -20,7 +20,7 @@
 <div class="field">
 	<div class="control">
 		<button type="submit" class="button is-link">{{ $buttonText }}</button>
-		<a href="{{ $project->path() }}">Cancel</a>
+		<a href="{{ $project->path() }}" class="text-default">Cancel</a>
 	</div>
 </div>
 
