@@ -4214,24 +4214,60 @@ button {
   color: var(--text-default-color);
 }
 
-.text-white {
-  color: white;
+.text-accent {
+  color: var(--text-accent-color);
+}
+
+.text-accent-light {
+  color: var(--text-accent-light-color);
+}
+
+.text-muted {
+  color: var(--text-muted-color);
+}
+
+.text-muted-light {
+  color: var(--text-muted-light-color);
 }
 
 .hover\:text-default:hover {
   color: var(--text-default-color);
 }
 
-.hover\:text-white:hover {
-  color: white;
+.hover\:text-accent:hover {
+  color: var(--text-accent-color);
+}
+
+.hover\:text-accent-light:hover {
+  color: var(--text-accent-light-color);
+}
+
+.hover\:text-muted:hover {
+  color: var(--text-muted-color);
+}
+
+.hover\:text-muted-light:hover {
+  color: var(--text-muted-light-color);
 }
 
 .focus\:text-default:focus {
   color: var(--text-default-color);
 }
 
-.focus\:text-white:focus {
-  color: white;
+.focus\:text-accent:focus {
+  color: var(--text-accent-color);
+}
+
+.focus\:text-accent-light:focus {
+  color: var(--text-accent-light-color);
+}
+
+.focus\:text-muted:focus {
+  color: var(--text-muted-color);
+}
+
+.focus\:text-muted-light:focus {
+  color: var(--text-muted-light-color);
 }
 
 .text-xs {
@@ -8241,24 +8277,60 @@ button {
     color: var(--text-default-color);
   }
 
-  .sm\:text-white {
-    color: white;
+  .sm\:text-accent {
+    color: var(--text-accent-color);
+  }
+
+  .sm\:text-accent-light {
+    color: var(--text-accent-light-color);
+  }
+
+  .sm\:text-muted {
+    color: var(--text-muted-color);
+  }
+
+  .sm\:text-muted-light {
+    color: var(--text-muted-light-color);
   }
 
   .sm\:hover\:text-default:hover {
     color: var(--text-default-color);
   }
 
-  .sm\:hover\:text-white:hover {
-    color: white;
+  .sm\:hover\:text-accent:hover {
+    color: var(--text-accent-color);
+  }
+
+  .sm\:hover\:text-accent-light:hover {
+    color: var(--text-accent-light-color);
+  }
+
+  .sm\:hover\:text-muted:hover {
+    color: var(--text-muted-color);
+  }
+
+  .sm\:hover\:text-muted-light:hover {
+    color: var(--text-muted-light-color);
   }
 
   .sm\:focus\:text-default:focus {
     color: var(--text-default-color);
   }
 
-  .sm\:focus\:text-white:focus {
-    color: white;
+  .sm\:focus\:text-accent:focus {
+    color: var(--text-accent-color);
+  }
+
+  .sm\:focus\:text-accent-light:focus {
+    color: var(--text-accent-light-color);
+  }
+
+  .sm\:focus\:text-muted:focus {
+    color: var(--text-muted-color);
+  }
+
+  .sm\:focus\:text-muted-light:focus {
+    color: var(--text-muted-light-color);
   }
 
   .sm\:text-xs {
@@ -12269,24 +12341,60 @@ button {
     color: var(--text-default-color);
   }
 
-  .md\:text-white {
-    color: white;
+  .md\:text-accent {
+    color: var(--text-accent-color);
+  }
+
+  .md\:text-accent-light {
+    color: var(--text-accent-light-color);
+  }
+
+  .md\:text-muted {
+    color: var(--text-muted-color);
+  }
+
+  .md\:text-muted-light {
+    color: var(--text-muted-light-color);
   }
 
   .md\:hover\:text-default:hover {
     color: var(--text-default-color);
   }
 
-  .md\:hover\:text-white:hover {
-    color: white;
+  .md\:hover\:text-accent:hover {
+    color: var(--text-accent-color);
+  }
+
+  .md\:hover\:text-accent-light:hover {
+    color: var(--text-accent-light-color);
+  }
+
+  .md\:hover\:text-muted:hover {
+    color: var(--text-muted-color);
+  }
+
+  .md\:hover\:text-muted-light:hover {
+    color: var(--text-muted-light-color);
   }
 
   .md\:focus\:text-default:focus {
     color: var(--text-default-color);
   }
 
-  .md\:focus\:text-white:focus {
-    color: white;
+  .md\:focus\:text-accent:focus {
+    color: var(--text-accent-color);
+  }
+
+  .md\:focus\:text-accent-light:focus {
+    color: var(--text-accent-light-color);
+  }
+
+  .md\:focus\:text-muted:focus {
+    color: var(--text-muted-color);
+  }
+
+  .md\:focus\:text-muted-light:focus {
+    color: var(--text-muted-light-color);
   }
 
   .md\:text-xs {
@@ -16297,24 +16405,60 @@ button {
     color: var(--text-default-color);
   }
 
-  .lg\:text-white {
-    color: white;
+  .lg\:text-accent {
+    color: var(--text-accent-color);
+  }
+
+  .lg\:text-accent-light {
+    color: var(--text-accent-light-color);
+  }
+
+  .lg\:text-muted {
+    color: var(--text-muted-color);
+  }
+
+  .lg\:text-muted-light {
+    color: var(--text-muted-light-color);
   }
 
   .lg\:hover\:text-default:hover {
     color: var(--text-default-color);
   }
 
-  .lg\:hover\:text-white:hover {
-    color: white;
+  .lg\:hover\:text-accent:hover {
+    color: var(--text-accent-color);
+  }
+
+  .lg\:hover\:text-accent-light:hover {
+    color: var(--text-accent-light-color);
+  }
+
+  .lg\:hover\:text-muted:hover {
+    color: var(--text-muted-color);
+  }
+
+  .lg\:hover\:text-muted-light:hover {
+    color: var(--text-muted-light-color);
   }
 
   .lg\:focus\:text-default:focus {
     color: var(--text-default-color);
   }
 
-  .lg\:focus\:text-white:focus {
-    color: white;
+  .lg\:focus\:text-accent:focus {
+    color: var(--text-accent-color);
+  }
+
+  .lg\:focus\:text-accent-light:focus {
+    color: var(--text-accent-light-color);
+  }
+
+  .lg\:focus\:text-muted:focus {
+    color: var(--text-muted-color);
+  }
+
+  .lg\:focus\:text-muted-light:focus {
+    color: var(--text-muted-light-color);
   }
 
   .lg\:text-xs {
@@ -20325,24 +20469,60 @@ button {
     color: var(--text-default-color);
   }
 
-  .xl\:text-white {
-    color: white;
+  .xl\:text-accent {
+    color: var(--text-accent-color);
+  }
+
+  .xl\:text-accent-light {
+    color: var(--text-accent-light-color);
+  }
+
+  .xl\:text-muted {
+    color: var(--text-muted-color);
+  }
+
+  .xl\:text-muted-light {
+    color: var(--text-muted-light-color);
   }
 
   .xl\:hover\:text-default:hover {
     color: var(--text-default-color);
   }
 
-  .xl\:hover\:text-white:hover {
-    color: white;
+  .xl\:hover\:text-accent:hover {
+    color: var(--text-accent-color);
+  }
+
+  .xl\:hover\:text-accent-light:hover {
+    color: var(--text-accent-light-color);
+  }
+
+  .xl\:hover\:text-muted:hover {
+    color: var(--text-muted-color);
+  }
+
+  .xl\:hover\:text-muted-light:hover {
+    color: var(--text-muted-light-color);
   }
 
   .xl\:focus\:text-default:focus {
     color: var(--text-default-color);
   }
 
-  .xl\:focus\:text-white:focus {
-    color: white;
+  .xl\:focus\:text-accent:focus {
+    color: var(--text-accent-color);
+  }
+
+  .xl\:focus\:text-accent-light:focus {
+    color: var(--text-accent-light-color);
+  }
+
+  .xl\:focus\:text-muted:focus {
+    color: var(--text-muted-color);
+  }
+
+  .xl\:focus\:text-muted-light:focus {
+    color: var(--text-muted-light-color);
   }
 
   .xl\:text-xs {

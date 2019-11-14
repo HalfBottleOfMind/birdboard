@@ -41,36 +41,35 @@
 
                     <div>
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto list-reset">
+                        <div class="flex ml-auto items-center">
                             <!-- Authentication Links -->
                             @guest
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
+								<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                    </li>
+									<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
-                            @else
-                                <li class="nav-item dropdown">
-                                    <a
-                                        class="flex items-center text-default no-underline text-sm"
-                                        href="#" role="button"
-                                        data-toggle="dropdown"
-                                        aria-haspopup="true"
-                                        aria-expanded="false"
-                                        v-pre
-                                    >
-                                        <img width="35"
-                                             class="rounded-full mr-3"
-                                             src="{{ gravatar_url(auth()->user()->email) }}">
+							@else
+								<div class="mr-8">
+									<button class="rounded-full w-4 h-4 bg-default border border-accent mr-2"></button>
+									<button class="rounded-full w-4 h-4 bg-default border border-accent mr-2"></button>
+									<button class="rounded-full w-4 h-4 bg-default border border-accent mr-2"></button>
+								</div>
+								<a
+									class="flex items-center text-default no-underline text-sm"
+									href="#" role="button"
+									data-toggle="dropdown"
+									aria-haspopup="true"
+									aria-expanded="false"
+									v-pre
+								>
+									<img width="35"
+											class="rounded-full mr-3"
+											src="{{ gravatar_url(auth()->user()->email) }}">
 
-										{{ auth()->user()->name }}
-                                    </a>
-                                </li>
+									{{ auth()->user()->name }}
+								</a>
                             @endguest
-                        </ul>
+							</div>
                     </div>
                 </div>
             </div>
