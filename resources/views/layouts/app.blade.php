@@ -49,11 +49,7 @@
 									<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
 							@else
-								<div class="mr-8">
-									<button class="rounded-full w-4 h-4 bg-default border border-accent mr-2"></button>
-									<button class="rounded-full w-4 h-4 bg-default border border-accent mr-2"></button>
-									<button class="rounded-full w-4 h-4 bg-default border border-accent mr-2"></button>
-								</div>
+								<theme-switcher></theme-switcher>
 								<a
 									class="flex items-center text-default no-underline text-sm"
 									href="#" role="button"
