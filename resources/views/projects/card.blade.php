@@ -5,7 +5,7 @@
 
     <div class="mb-4 flex-1">{{ Str::limit($project->description, 100) }}</div>
 
-    @can ('manage', $project)
+    @can ('delete', $project)
         <footer>
             <form method="POST" action="{{ $project->path() }}" class="text-right">
                 @method('DELETE')

@@ -82,7 +82,7 @@
                 @include ('projects.card')
                 @include ('projects.activity.card')
 
-                @can ('manage', $project)
+                @can ('invite', $project)
                     @include ('projects.invite')
                 @endcan
             </div>
