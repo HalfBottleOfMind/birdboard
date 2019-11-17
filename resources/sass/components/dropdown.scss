@@ -1,0 +1,7 @@
+.dropdown-menu-link {
+	@apply .block .text-default .text-sm .leading-loose .px-4;
+
+	&:hover {
+		@apply underline;
+	}
+}
